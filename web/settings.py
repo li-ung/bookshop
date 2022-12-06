@@ -84,9 +84,9 @@ DATABASES = {
  'default': {
         # 连接本地mysql数据库
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo',  # 你的数据库名
-        'USER': 'root',  # 你的用户名
-        'PASSWORD': 'liyun942117116',  # 你的密码
+        'NAME': 'demo',  # 数据库名
+        'USER': 'root',  # 用户名
+        'PASSWORD': '',  # 密码
         'HOST': 'localhost',  # 本地连接
         'PORT': '3306',  # 本地端口号
     }
