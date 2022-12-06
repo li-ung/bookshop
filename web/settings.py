@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os.path
 from pathlib import Path
+from django.views import static
+from django.conf import  settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = os.path.dirname(__file__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -84,9 +87,9 @@ DATABASES = {
  'default': {
         # 连接本地mysql数据库
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo',  # 你的数据库名
-        'USER': 'root',  # 你的用户名
-        'PASSWORD': 'liyun942117116',  # 你的密码
+        'NAME': 'demo',  # 数据库名
+        'USER': 'root',  # 用户名
+        'PASSWORD': 'liyun942117116',  # 密码
         'HOST': 'localhost',  # 本地连接
         'PORT': '3306',  # 本地端口号
     }
@@ -121,7 +124,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS =(
+    ('images', os.path.join(STATIC_ROOT, 'images').replace('\\', '/')),
+    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
+    ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/'))
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -71,25 +71,25 @@
 <div class="container">
     <div class="login-wrapper">
         <div class="header">请选择</div>
-        <form action="/demo/login/index/manager/shangjia/" method="post">
+        <form action="/demo/login/manager/shangjia/" method="post">
             {% csrf_token %}
             <div class="form-wrapper">
                 <input type="submit" value="上架商品" class = "btn">
             </div>
         </form>
-        <form action="/demo/login/index/manager/xiajia/" method="post">
+        <form action="/demo/login/manager/xiajia/" method="post">
             {% csrf_token %}
             <div class="form-wrapper">
                 <input type="submit" value="下架商品" class = "btn">
             </div>
         </form>
-         <form action="/demo/login/index/manager/xiugai/" method="post">
+         <form action="/demo/login/manager/xiugai/" method="post">
             {% csrf_token %}
             <div class="form-wrapper">
                 <input type="submit" value="修改商品信息" class = "btn">
             </div>
         </form>
-         <form action="/demo/login/index/manager/shouhou/" method="post">
+         <form action="/demo/login/manager/shouhou/" method="post">
             {% csrf_token %}
             <div class="form-wrapper">
                 <input type="submit" value="售后处理" class = "btn">

@@ -84,3 +84,6 @@ def Shangjia_view(request):
 
 def Xiajia_view(request):
     return render(request, 'xiajia.html')
+
+def Bookdetail_view(request):
+    return render(request, 'detail.html')

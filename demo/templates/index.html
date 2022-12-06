@@ -3,65 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <title>电子书商城</title>
+    <style>
+		* {
+		    padding: 0px;
+		    margin: 0px;
+			/* 去除编号 */
+		    list-style: none;
+		}
+		img{
+			width: 250px;
+			height: 250px;
+		}
+    td{
+			font-size: 20px;
+			font-weight: 40px;
+			width: 200px;
+			text-align: center;
+		}
+		.nav {
+		    height: 60px;
+		    background: LightSteelBlue;
+		}
+		.nav>li {
+		    color: white;
+		    float: left;
+			/* 文字垂直剧中  只要行高和高度一致 */
+		    line-height: 60px;
+		    padding: 0px 30px;
+		    position: relative;
+		}
+    .nav p{
+      color: gray;
+      line-height: 60px;
+    }
+		li {
+		    position: relative;
+		    text-align: center;
+		}
+    .nav>li:hover {
+		    background: black;
+		}
+
+		.nav ul {
+		    background: rebeccapurple;
+		    width: 100px;
+		    position: absolute;
+		    left: 0px;
+	      opacity: 0;
+		    transform: rotate(0deg) scale(.5);
+		    transition: .2s;
+		}
+
+		li li:hover {
+		    background: yellow;
+		}
+
+		.nav>li:hover ul {
+		    opacity: 1;
+		    transform: rotate(360deg) scale(1);
+		}
+    /* 下划线 */
+		li::after {
+		    content: "";
+		    position: absolute;
+		    width: 0;
+		    height: 5px;
+		    background: white;
+		    bottom: 10px;
+		    left: 50%;
+		    transform: translate(-50%, 0);
+		    transition: 1s;
+		}
+
+		li:hover::after {
+		  width: 80%;
+			body {
+				font-size: 12px;
+				line-height: 25px;
+			}
+
+			table {
+				border-top: solid 1px #666666;
+				border-left: solid 1px #666666;
+			}
+
+			td {
+				text-align: center;
+				border-right: solid 1px #666666;
+				border-bottom: solid 1px #666666;
+			}
+
+			.left {
+				text-align: left;
+				padding-left: 10px;
+			}
+
+			#photo {
+				border: solid 1px #0066CC;
+				width: 200px;
+				text-align: center;
+				z-index: 2;
+				position: absolute;
+				display: none;
+				top: 50px;
+				left: 50px;
+				background-color: #ffffff;
+			}
+
+			#big {
+
+				width: 200px;
+			}
+
+			h1 {
+				/* transform: translate(45%); */
+				text-align: center;
+			}
+
+			table {
+				margin: 0 auto;
+				width: 100%;
+				border: 2px solid #aaa;
+				border-collapse: collapse;
+			}
+
+			table th,
+			table td {
+				border: 2px solid #aaa;
+				padding: 5px;
+			}
+
+			th {
+				background-color: #eee;
+			}
+			.id{
+				font-size: 10px;
+			}
+		}
+	  .zuo {
+		    height: 30px;
+		    background: hsl(214, 41%, 78%,0.8);
+		}
+		.zuo>li {
+		    color: white;
+		    float: left;
+			/* 文字垂直剧中  只要行高和高度一致 */
+		    line-height: 50px;
+		    padding: 0px 30px;
+		    position: relative;
+		}
+
+		li {
+		    position: relative;
+		    text-align: center;
+		}
+	.da { width:1100px; margin:auto; }
+    .lo { width:1100px; height:70px; padding-top:30px;}
+    .go { width: 200px;  position:fixed;left:0px;background:rgba(153, 150, 150, 0.7);float:left; margin-left:0px;}
+    .kg { width: 700px;  float:right;}
+    .kg input  {width:500px; height:40px; border:2px solid #FF0000; float:left }
+    .kg p { width:90px; height:30px; border:2px solid #FF0000; float:right; background:#FF0000; float:left; font-size: 14px; text-align:center; padding-top:10px;  }
+    .dao { width:1100px; height:50px; background:#FF0000; }
+    .dao li {float:left; margin-left:80px;  margin-top:15px; }
+    .dao a {font-size: 16px; color:#FFFFFF; }
+    .ban { margin-top:20px;}
+    .sha {  margin-top:10px; }
+    .miao { margin-top:20px;}
+    .miao img { margin-left:60px;}
+    .mzi p { width:100px;float:left; margin-left:150px; margin-top:5px;  font-size:18px; color:#FF0000;}
+    .nian {margin-top:40px;}
+    .mz { margin-top:30px;}
+    .mz img { width:150px;margin-left:110px;}
+    .mz p  { width:130px;float:left; margin-left:130px; margin-top:5px;  font-size:18px; }
+    .dia  { margin-top:50px; }
+    .dia img { width:150px;margin-left:110px;}
+    .zhe { margin-top:20px;}
+    .zhe img { width:200px; margin-left:60px; }
+    .zzi{ margin-top:10px;}
+    .zzi p { width:200px; float:left; margin-left:60px; font-size:14px; text-align:center }
+    .foot { width:1100px; height:80px;  background:#FF0000;  margin-top:20px; }
+    .foot p { font-size: 14px; color:#FFFFFF; text-align:center; line-height:80px;}
+    .STYLE1 {
+	    font-size: 14px;
+	    font-weight: bold;
+    }
+    .STYLE3 {
+	    font-size: 12px;
+	    color: #666666;
+    }
+    .STYLE4 {font-size: 14px}
+    .STYLE5 {
+	    color: #FF0000;
+	    font-weight: bold;
+    }
+    .STYLE6 {color: #666666}
+    .STYLE7 {
+	    font-size: 14px;
+	    font-weight: bold;
+	}
+    .xue { margin-top:20px;}
+    .zo { width:800px; float:left;}
+    .you { width:200px; float:right;}
+    .wen { margin-top:20px; }
+    .wen img { margin-left: 50px;}
+    .wz { margin-top:10px;}
+    .wz p { width:200px; float:left; margin-left: 90px; font-size: 14px;}
+    .you {  margin-top:20px; float:right; }
+    .you p {  font-size: 14px; line-height:50px;}
+
+    .lv {  margin-bottom:200px; width:600px; height:380px;  border:2px solid #666666; margin:auto; margin-top:100px; margin-bottom:100px;}
+    .lv  h2 { text-align:center; margin-top:50px;}
+    .lv input { width:250px; height:30px; border:1px solid #666666; margin-left:10px; margin-top:10px;}
+    .lv p { float:right; font-size: 14px; margin-right:10px;}
+    .an { width:200px; height:30px; background:#999999; border:1px solid #000000;  margin-top:60px; margin-left:220px;}
+    .an a { margin-left:70px;  font-size: 14px; }
+
+    .zu {  margin-bottom:200px; width:600px; height:530px;  border:2px solid #666666; margin:auto; margin-top:100px; margin-bottom:100px;}
+    .zu  h2 { text-align:center; margin-top:50px;}
+    .zu input { width:250px; height:30px; border:1px solid #666666; margin-left:10px; margin-top:10px;}
+    .zu p { float:right; font-size: 14px; margin-right:10px;}
+    .ce { width:200px; height:30px; background: #999999; border:1px solid #000000;  margin-top:60px; margin-left:220px;}
+    .ce a { margin-left:70px;  font-size: 14px; }
+	</style>
 </head>
-<!--<body>-->
-<!--<div class="container">-->
-<!--    <div class="login-wrapper">-->
-<!--        <div class="header">登录</div>-->
-<!--        <form action="/demo/login/index/shopcar/" method="post">-->
-<!--            {% csrf_token %}-->
-<!--            <div class="form-wrapper">-->
-<!--                <input type="text" name="user" placeholder="用户名" class="input-item">-->
-<!--                <input type="password" name="password" placeholder="密码" class="input-item">-->
-<!--                <input type="submit" value="购物车中心" class = "btn">-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
-<!--</body>-->
 <body>
-<div class="da">
-<div class="lo">
-<div class="go"><img src="../images/logo.jpg" /></div>
-<div class="kg"><input name="" type="text" /> <p><a href="#">搜索</a></p></div>
+    <ul class="nav">
+        <li>首页</li>
+        <li>登录</li>
+        <li>注册</li>
+        <li><a href="shopcar" color="white">购物车</a></li>
+        <li>历史订单</li>
+        <li><input name="" type="text" /><a href="detail">搜索</a></li>
+    </ul>
+    <marquee><span style="font-weight: bolder;font-size: 40px;color: black;">Welcome to our bookstore~</span></marquee>
+    <!-- <div class="go"><h2>bookstore~</h2></div> -->
+<div class="sha">
+<div class="zuo"><h3 align="center">电子书推荐</h3></div>
+<div class="mz">
+    <p><strong>折扣专区</strong></p>
+    <p><strong>大学图书</strong></p>
+    <p><strong>畅销榜单</strong></p>
+    <p><strong>海外经典</strong></p>
 </div>
-<div class="dao"><ul>
-<li><a href="index.html" >首页</a></li>
-<li><a href="wenxue.html">文学频道</a></li>
-<li><a href="sheke.html">社科频道</a></li>
-<li><a href="s号r.html">少儿频道</a></li>
-<li><a href="shengh.html">生活频道</a></li>
-<li><a href="dengl.html">用户登录</a></li>
-<li><a href="zuce.html">用户注册</a></li></ul></div>
-<div class="ban"><img src="images/shou1.jpg" /></div>
+
+<div class="mz">
+    <img src="/static/images/miao5.jpg" />
+    <img src="/static/images/miao6.jpg" />
+    <img src="/static/images/miao7.jpg" />
+    <img src="/static/images/miao8.jpg" />
+</div>
 
 <div class="sha">
-
-<div class="mz"><p><strong>低价专区</strong></p>
-<p><strong>公共营养师</strong></p><p><strong>旅行圣经</strong></p><p><strong>小学图书馆</strong></p></div>
-
-<div class="dia"><img src="../images/miao5.jpg" /><img src="images/miao6.jpg" /><img src="images/miao7.jpg" /><img src="images/miao8.jpg" /></div>
-
-<div class="zuo">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" height="60">
-  <tr>
-    <td width="4%"><img src="../images/shou5.jpg" /></td>
-    <td width="96%"><span class="STYLE7">作家推荐</span></td>
-  </tr>
-</table>
+<div class="zuo"><h3 align="center">作家推荐</h3></div>
+    <div class="zzi">
+    <p>杨绛</p>
+    <p>东野圭吾</p>
+    <p>加西亚·马尔克斯</p>
+    <p>曹文轩</p>
 </div>
-
-
-<div class="zhe"><img src="../images/zhe1.jpg" /><img src="images/zhe2.jpg" /><img src="images/zhe3.jpg" /><img src="images/zhe4.jpg" /></div>
-<div class="zzi"><p>杨绛</p><p>东野圭吾</p><p>加西亚·马尔克斯</p><p>曹文轩</p></div>
-
-
+<div class="dia">
+    <img src="/static/images/zhe1.jpg" />
+    <img src="/static/images/zhe2.jpg" />
+    <img src="/static/images/zhe3.jpg" />
+    <img src="/static/images/zhe4.jpg" />
+</div>
 
 
 <div class="clearit"></div>
 
-<div class="foot"><p>@图书商城</p></div>
+<div class="nav">
+    <p align="center"><b>@电子书商城</b></p>
 </div>
-    </body>
+
+</body>
 </html>
